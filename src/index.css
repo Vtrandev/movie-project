@@ -58,14 +58,14 @@ img {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    border: 1px solid black
+    /* border: 1px solid black */
 }
 
 .moviefeed__card {
     width: calc(85% / 3);
     height: 700px;
     margin: 24px;
-    border: 1px solid black
+    /* border: 1px solid black */
 }
 
 .moviefeed__skeleton {

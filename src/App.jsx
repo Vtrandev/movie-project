@@ -9,14 +9,14 @@ function App() {
     <Router>
       <div className="row">
         <Nav />
-        
-          <Routes>
-            <Route path='/' exact element={<Home />} />
-            <Route path='/search' exact element={<Search />} />
-            <Route path='/search/:searchTerm' element={<Search />} />            
-          </Routes>
 
-          <Footer />
+        <Routes>
+          <Route path="/" exact element={<Home />} />
+          <Route path="/search" exact element={<Search />} />
+          <Route path="/search/:searchTerm" element={<Search />} />
+        </Routes>
+
+        <Footer />
       </div>
     </Router>
   );

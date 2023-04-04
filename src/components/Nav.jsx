@@ -2,7 +2,6 @@ import React from "react";
 import Logo from "../assets/movie.png";
 
 const Nav = () => {
-
   return (
     <>
       <div
@@ -13,9 +12,8 @@ const Nav = () => {
           padding: "30px 0",
         }}
       >
-        
         <a href="/">
-        <img src={Logo} alt="logo" style={{ maxWidth: "200px" }} />
+          <img src={Logo} alt="logo" style={{ maxWidth: "200px" }} />
         </a>
 
         <div
@@ -25,10 +23,14 @@ const Nav = () => {
             justifyContent: "space-between",
             alignItems: "center",
             // border: "1px solid black"
-        }}
+          }}
         >
-          <a href="/" className="nav__link">Home</a>
-          <a href="/search" className="nav__link">Search Movies</a>
+          <a href="/" className="nav__link">
+            Home
+          </a>
+          <a href="/search" className="nav__link">
+            Search Movies
+          </a>
           <button>CONTACT</button>
         </div>
       </div>
