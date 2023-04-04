@@ -13,7 +13,11 @@ const Nav = () => {
           padding: "30px 0",
         }}
       >
+        
+        <a href="/">
         <img src={Logo} alt="logo" style={{ maxWidth: "200px" }} />
+        </a>
+
         <div
           style={{
             maxWidth: "630px",
