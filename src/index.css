@@ -45,6 +45,18 @@ img {
     padding: 0 32px;
 }
 
+.search__bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60vw;
+    margin-bottom: 50px;
+}
+
+.search__button {
+    margin-left: 20px;
+}
+
 
 /* Movie Feed page  */
 #filter {
@@ -66,6 +78,10 @@ img {
     height: 700px;
     margin: 24px;
     /* border: 1px solid black */
+}
+
+.moviefeed__poster {
+    cursor: pointer;
 }
 
 .moviefeed__skeleton {
@@ -94,3 +110,38 @@ img {
     font-size: 20px;
 }
 
+/* Movie Detail Page  */
+.moviedetail__wrapper{
+    display: flex;
+    justify-content: center;
+    border: 1px solid black
+}
+
+.moviedetail__poster {
+    width: 100%;
+    margin-right: 48px;
+    border: 1px solid black
+}
+
+.moviedetail__description {
+    margin-right: 32px;
+}
+
+.moviedetail__title {
+    margin-bottom: 32px;
+}
+
+.moviedetail__subtitle {
+    font-size: 18px;
+    padding-bottom: 12px;
+}
+
+@media (max-width: 568px) {
+    .search__bar {
+        flex-direction: column;
+    }
+    .search__button {
+        width: 100%;
+        margin-left: 0;
+    }
+}

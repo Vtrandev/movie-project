@@ -13,7 +13,7 @@ const Nav = () => {
         }}
       >
         <a href="/">
-          <img src={Logo} alt="logo" style={{ maxWidth: "200px" }} />
+          <img src={Logo} alt="logo" style={{ minWidth: "100px", maxWidth: "200px" }} />
         </a>
 
         <div

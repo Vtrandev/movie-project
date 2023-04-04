@@ -7,17 +7,15 @@ function Searchbar({ height, width }) {
   const [searchTerm, setSearchTerm] = useState("");
 
   return (
-    <div
-      style={{ display: "flex", alignItems: "center", marginBottom: "50px" }}
-    >
+    <div className="search__bar">
       <input
         type="text"
         placeholder="Search by Title"
         style={{
           //   minWidth: "300px",
-          maxWidth: "800px",
+          maxWidth: "100%",
           height: height || "60px",
-          fontSize: "30px",
+          fontSize: "24px",
           borderRadius: "24px",
           border: "1px solid black",
           padding: "12px 24px",
@@ -28,7 +26,7 @@ function Searchbar({ height, width }) {
         }
       />
       <button
-        style={{ marginLeft: "20px" }}
+      className="search__button"
         onClick={() => navigate(`/search/${searchTerm}`)}
       >
         <MagnifyingGlassIcon style={{ width: width || "40px" }} />

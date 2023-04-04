@@ -1,28 +1,31 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import MovieFeed from "../components/MovieFeed";
 import Searchbar from "../components/Searchbar";
+import MovieFeed from "../components/MovieFeed";
 
 function Search() {
   const id = useParams();
-  const [searchTerm, setSearchTerm] = useState("new");
-  const [movieSearch, setMovieSearch] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('new');
+  const [movieSearch, setMovieSearch] = useState('');
   const [loading, setLoading] = useState(true);
 
-  async function fetchMovies(searchTerm) {
-    console.log(searchTerm);
-    const { data } = await axios.get(
-      `https://www.omdbapi.com/?apikey=aafd31ec&s=${searchTerm}`
-    );
-    setMovieSearch(data.Search);
-    setLoading(false);
-  }
-
   useEffect(() => {
+  
     setSearchTerm(id.searchTerm || "new");
     fetchMovies(searchTerm);
   }, [id, searchTerm]);
+
+  async function fetchMovies(searchTerm) {
+
+    const { data } = await axios.get(
+      `https://www.omdbapi.com/?apikey=aafd31ec&s=${searchTerm}`
+    );
+
+    console.log(data.Search)
+    setMovieSearch(data.Search);
+    setLoading(false);
+  }
 
   return (
     <>
@@ -31,7 +34,7 @@ function Search() {
       </div>
 
       {!loading ? (
-        <MovieFeed movie={movieSearch} />
+        <MovieFeed movie={movieSearch} searchTerm={searchTerm} />
       ) : (
         <div className="moviefeed__wrapper">
           {new Array(6).fill(0).map((_, index) => (
@@ -43,7 +46,7 @@ function Search() {
             </div>
           ))}
         </div>
-      )}
+        )} 
     </>
   );
 }

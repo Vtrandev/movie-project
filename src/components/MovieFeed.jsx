@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-function MovieFeed({ movie }) {
+
+function MovieFeed( { movie, searchTerm } ) {
+  console.log(movie);
+
   const [filter, setFilter] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     FilterMovie(filter, movie);
@@ -21,7 +26,10 @@ function MovieFeed({ movie }) {
       <div className="moviefeed__wrapper">
         {movie.map((movie, index) => (
           <div className="moviefeed__card" key={index}>
-            <div className="moviefeed__poster">
+            <div
+              className="moviefeed__poster"
+              onClick={() => navigate(`/movie/${movie.imdbID}`)}
+            >
               <img src={movie.Poster} alt="Movie Poster" />
               <div className="moviefeed__more-info">
                 <h1>MORE INFO</h1>
@@ -38,11 +46,14 @@ function MovieFeed({ movie }) {
 
   return (
     <>
-      <select id="filter" onChange={(e) => setFilter(e.target.value)}>
-        <option value="">Sort</option>
-        <option value="OLD_TO_NEW">Year, Old to New</option>
-        <option value="NEW_TO_OLD">Year, New to Old</option>
-      </select>
+      <div style={{ display: "flex", justifyContent: "space-between"}}>
+        <h1>Search for: {searchTerm} </h1>
+        <select id="filter" onChange={(e) => setFilter(e.target.value)}>
+          <option value="">Sort</option>
+          <option value="OLD_TO_NEW">Year, Old to New</option>
+          <option value="NEW_TO_OLD">Year, New to Old</option>
+        </select>
+      </div>
       {MovieOutput(movie)}
     </>
   );

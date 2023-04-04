@@ -3,6 +3,7 @@ import Nav from "./components/Nav";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import Search from "./pages/Search";
+import MovieDetail from "./pages/MovieDetail";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" exact element={<Home />} />
           <Route path="/search" exact element={<Search />} />
           <Route path="/search/:searchTerm" element={<Search />} />
+          <Route path="/movie/:movieId" element={<MovieDetail />} />
         </Routes>
 
         <Footer />
