@@ -1,5 +1,6 @@
 import React from "react";
 import Logo from "../assets/movie.png";
+import BurgerMenu from "./BurgerMenu";
 
 const Nav = () => {
   return (
@@ -17,13 +18,7 @@ const Nav = () => {
         </a>
 
         <div
-          style={{
-            maxWidth: "630px",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            // border: "1px solid black"
-          }}
+          className="menu"
         >
           <a href="/" className="nav__link">
             Home
@@ -31,8 +26,9 @@ const Nav = () => {
           <a href="/search" className="nav__link">
             Search Movies
           </a>
-          <button>CONTACT</button>
+          <button className="no-cursor">CONTACT</button>
         </div>
+        <BurgerMenu />
       </div>
     </>
   );

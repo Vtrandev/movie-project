@@ -3,8 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 
 function MovieFeed( { movie, searchTerm } ) {
-  console.log(movie);
-
+  
   const [filter, setFilter] = useState(null);
   const navigate = useNavigate();
 

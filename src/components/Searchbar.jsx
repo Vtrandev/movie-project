@@ -7,13 +7,14 @@ function Searchbar({ height, width }) {
   const [searchTerm, setSearchTerm] = useState("");
 
   return (
-    <div className="search__bar">
+    <div className="search">
       <input
+        className="search__bar"
         type="text"
         placeholder="Search by Title"
         style={{
-          //   minWidth: "300px",
-          maxWidth: "100%",
+          // width: "50%",
+          minWidth: "300px",
           height: height || "60px",
           fontSize: "24px",
           borderRadius: "24px",

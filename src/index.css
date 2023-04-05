@@ -26,11 +26,21 @@ button {
 }
 
 a {
+    color: white;
     text-decoration: none;
 }
 
 img {
     width: 100%;
+}
+
+.no-cursor {
+    cursor: not-allowed;
+}
+
+li {
+    color: white;
+    list-style: none;
 }
 
 /* Home page */
@@ -42,10 +52,13 @@ img {
 }
 
 .nav__link {
+    font-size: 16px;
+    color: black;
+    font-weight: 500;
     padding: 0 32px;
 }
 
-.search__bar {
+.search {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,8 +66,66 @@ img {
     margin-bottom: 50px;
 }
 
+.search__bar {
+    width: 50%;
+}
+
 .search__button {
     margin-left: 20px;
+}
+
+.menu {
+    max-width: 630px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Burger Menu  */
+
+.btn__menu {
+    width: 40px;
+    display: none;
+    cursor: pointer;
+}
+
+.menu__backdrop {
+    position: absolute;
+    background-color: #242424;
+    color: white;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+}
+
+.menu__links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu__list {
+    color: white;
+    margin-bottom: 16px;
+}
+
+.menu--open .menu__backdrop {
+    display: flex;
+    opacity: 1;
+}
+
+.btn__menu--close {
+    position: absolute;
+    width: 50px;
+    right: 15px;
+    top: 35px;
+    padding: 8px;
 }
 
 
@@ -74,9 +145,8 @@ img {
 }
 
 .moviefeed__card {
-    width: calc(85% / 3);
-    height: 700px;
-    margin: 24px;
+    width: calc(85% / 4);
+    margin: 12px;
     /* border: 1px solid black */
 }
 
@@ -114,13 +184,11 @@ img {
 .moviedetail__wrapper{
     display: flex;
     justify-content: center;
-    border: 1px solid black
 }
 
 .moviedetail__poster {
     width: 100%;
     margin-right: 48px;
-    border: 1px solid black
 }
 
 .moviedetail__description {
@@ -136,12 +204,48 @@ img {
     padding-bottom: 12px;
 }
 
-@media (max-width: 568px) {
-    .search__bar {
+@media (max-width: 1200px) {
+    .moviefeed__card {
+        width: calc(85%/3);
+    }
+    
+}
+
+
+@media (max-width: 768px) {
+    .moviefeed__card {
+        width: calc(85%/2);
+    }
+
+    .moviedetail__wrapper {
         flex-direction: column;
+        margin: 80px;
+    }
+
+    .moviedetail__poster {
+        margin: 0;
+        padding-bottom: 30px;
+    }
+    
+}
+
+@media (max-width: 568px) {
+    .search {
+        flex-direction: column;
+    }
+    .search__bar {
+        width: 100%;
     }
     .search__button {
         width: 100%;
         margin-left: 0;
+    }
+
+    .menu {
+        display:none;
+    }
+
+    .btn__menu {
+        display: flex;
     }
 }

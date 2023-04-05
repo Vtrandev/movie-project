@@ -6,25 +6,23 @@ import MovieFeed from "../components/MovieFeed";
 
 function Search() {
   const id = useParams();
-  const [searchTerm, setSearchTerm] = useState('new');
-  const [movieSearch, setMovieSearch] = useState('');
+  const [searchTerm, setSearchTerm] = useState();
+  const [movieSearch, setMovieSearch] = useState('New');
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-  
-    setSearchTerm(id.searchTerm || "new");
-    fetchMovies(searchTerm);
+
+      setSearchTerm(id.searchTerm || 'New');
+      fetchMovies(searchTerm);
+
   }, [id, searchTerm]);
 
   async function fetchMovies(searchTerm) {
-
-    const { data } = await axios.get(
-      `https://www.omdbapi.com/?apikey=aafd31ec&s=${searchTerm}`
-    );
-
-    console.log(data.Search)
-    setMovieSearch(data.Search);
-    setLoading(false);
+      const { data } = await axios.get(
+        `https://www.omdbapi.com/?apikey=aafd31ec&s=${searchTerm}`
+      );
+      setMovieSearch(data.Search);
+      setLoading(false);
   }
 
   return (
