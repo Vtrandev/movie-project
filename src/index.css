@@ -97,10 +97,23 @@ li {
     left: 0;
     right: 0;
     z-index: 50;
-    display: none;
     justify-content: center;
     align-items: center;
     height: 20vh;
+    display: none;
+    animation: slide-in 200ms linear;
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .menu__links {
@@ -193,6 +206,7 @@ li {
 
 .moviedetail__description {
     margin-right: 32px;
+    width: 100%;
 }
 
 .moviedetail__title {
@@ -207,6 +221,13 @@ li {
 @media (max-width: 1200px) {
     .moviefeed__card {
         width: calc(85%/3);
+    }
+    
+}
+
+@media (min-width: 1200px) {
+    .menu__backdrop {
+        display: none;
     }
     
 }
@@ -226,6 +247,14 @@ li {
         margin: 0;
         padding-bottom: 30px;
     }
+
+    .menu {
+        display:none;
+    }
+
+    .btn__menu {
+        display: flex;
+    }
     
 }
 
@@ -241,11 +270,10 @@ li {
         margin-left: 0;
     }
 
-    .menu {
-        display:none;
-    }
+    
 
-    .btn__menu {
-        display: flex;
+    .moviedetail__wrapper {
+        flex-direction: column;
+        margin: 20px;
     }
 }

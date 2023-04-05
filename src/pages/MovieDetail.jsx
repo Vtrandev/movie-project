@@ -25,17 +25,17 @@ function MovieDetail() {
 
         <div className='moviedetail__description'>
             <h1 className='moviedetail__title'>{movieDetail.Title}</h1>
-            <p className='moviedetail__subtitle'>Cast:<br />{movieDetail.Actors}</p>
-            <p className='moviedetail__subtitle'>Plot:<br />{movieDetail.Plot}</p>
-            <p className='moviedetail__subtitle'>Genre:<br />{movieDetail.Genre}</p>
-            <p className='moviedetail__subtitle'>Director:<br />{movieDetail.Director}</p>
-            <p className='moviedetail__subtitle'>Writer:<br />{movieDetail.Writer}</p>
-            <p className='moviedetail__subtitle'>Release Date:<br />{movieDetail.Released}</p>
-            <p className='moviedetail__subtitle'>Box Office:<br />{movieDetail.BoxOffice}</p>
-            <p className='moviedetail__subtitle'>Type:<br />{movieDetail.Type}</p>
-            <p className='moviedetail__subtitle'>Rated:<br />{movieDetail.Rated}</p>
-            <p className='moviedetail__subtitle'>Duration:<br />{movieDetail.Runtime}</p>
-            <p className='moviedetail__subtitle'>IMDB Rating:<br />{movieDetail.imdbRating}</p>
+            <p className='moviedetail__subtitle'><strong>Cast:</strong><br />{movieDetail.Actors}</p>
+            <p className='moviedetail__subtitle'><strong>Plot:</strong><br />{movieDetail.Plot}</p>
+            <p className='moviedetail__subtitle'><strong>Genre:</strong><br />{movieDetail.Genre}</p>
+            <p className='moviedetail__subtitle'><strong>Director:</strong><br />{movieDetail.Director}</p>
+            <p className='moviedetail__subtitle'><strong>Writer:</strong><br />{movieDetail.Writer}</p>
+            <p className='moviedetail__subtitle'><strong>Release Date:</strong><br />{movieDetail.Released}</p>
+            <p className='moviedetail__subtitle'><strong>Box Office:</strong><br />{movieDetail.BoxOffice}</p>
+            <p className='moviedetail__subtitle'><strong>Type:</strong><br />{movieDetail.Type}</p>
+            <p className='moviedetail__subtitle'><strong>Rated:</strong><br />{movieDetail.Rated}</p>
+            <p className='moviedetail__subtitle'><strong>Duration:</strong><br />{movieDetail.Runtime}</p>
+            <p className='moviedetail__subtitle'><strong>IMDB Rating:</strong><br />{movieDetail.imdbRating}</p>
 
         </div>
     </div>
